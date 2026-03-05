@@ -2,6 +2,10 @@
 
 Beer knowledge API client for developers — search beer styles, ingredients, and brewing terms from BeerFYI.
 
+<p align="center">
+  <img src="demo.gif" alt="beerfyi demo — beer style API search and lookup" width="800">
+</p>
+
 ## Install
 
 ```bash
