@@ -1,6 +1,6 @@
 # beerfyi
 
-[![PyPI](https://img.shields.io/pypi/v/beerfyi)](https://pypi.org/project/beerfyi/)
+[![PyPI version](https://agentgif.com/badge/pypi/beerfyi/version.svg)](https://pypi.org/project/beerfyi/)
 [![Python](https://img.shields.io/pypi/pyversions/beerfyi)](https://pypi.org/project/beerfyi/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
