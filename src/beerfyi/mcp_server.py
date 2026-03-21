@@ -1,64 +1,88 @@
-"""MCP server for beerfyi — beer knowledge tools for AI assistants.
+"""MCP server for beerfyi — AI assistant tools for beerfyi.com.
 
-Requires the ``mcp`` extra: ``pip install beerfyi[mcp]``
-
-Run as a standalone server::
-
-    python -m beerfyi.mcp_server
-
-Or configure in ``claude_desktop_config.json``::
-
-    {
-        "mcpServers": {
-            "beerfyi": {
-                "command": "python",
-                "args": ["-m", "beerfyi.mcp_server"]
-            }
-        }
-    }
+Run: uvx --from "beerfyi[mcp]" python -m beerfyi.mcp_server
 """
-
 from __future__ import annotations
 
 from mcp.server.fastmcp import FastMCP
 
-mcp = FastMCP("beerfyi")
+mcp = FastMCP("BeerFYI")
 
 
 @mcp.tool()
-def beer_search(query: str) -> str:
-    """Search beer styles, ingredients, and brewing terms from BeerFYI.
-
-    Search the BeerFYI encyclopedia for beer styles (IPA, Stout, Lager, etc.),
-    ingredients (hops, malts, yeasts), brewing terms, breweries, and more.
+def list_hops(limit: int = 20, offset: int = 0) -> str:
+    """List hops from beerfyi.com.
 
     Args:
-        query: Search term (e.g. "ipa", "cascade hops", "belgian", "stout").
+        limit: Maximum number of results. Default 20.
+        offset: Number of results to skip. Default 0.
     """
     from beerfyi.api import BeerFYI
 
     with BeerFYI() as api:
-        results = api.search(query)
+        data = api.list_hops(limit=limit, offset=offset)
+        results = data.get("results", data) if isinstance(data, dict) else data
+        if not results:
+            return "No hops found."
+        items = results[:limit] if isinstance(results, list) else []
+        return "\n".join(f"- {item.get('name', item.get('slug', '?'))}" for item in items)
 
-    items = results.get("results", [])
-    if not items:
-        return f"No results found for '{query}'."
 
-    lines = [
-        f"## Beer Search: {query}",
-        "",
-        f"Found {len(items)} result(s):",
-        "",
-        "| Type | Name | URL |",
-        "|------|------|-----|",
-    ]
-    for item in items:
-        item_type = item.get("type", "")
-        name = item.get("name", "")
-        url = item.get("url", "")
-        lines.append(f"| {item_type} | {name} | {url} |")
-    return "\n".join(lines)
+@mcp.tool()
+def get_hop(slug: str) -> str:
+    """Get detailed information about a specific hop.
+
+    Args:
+        slug: URL slug identifier for the hop.
+    """
+    from beerfyi.api import BeerFYI
+
+    with BeerFYI() as api:
+        data = api.get_hop(slug)
+        return str(data)
+
+
+@mcp.tool()
+def list_malts(limit: int = 20, offset: int = 0) -> str:
+    """List malts from beerfyi.com.
+
+    Args:
+        limit: Maximum number of results. Default 20.
+        offset: Number of results to skip. Default 0.
+    """
+    from beerfyi.api import BeerFYI
+
+    with BeerFYI() as api:
+        data = api.list_malts(limit=limit, offset=offset)
+        results = data.get("results", data) if isinstance(data, dict) else data
+        if not results:
+            return "No malts found."
+        items = results[:limit] if isinstance(results, list) else []
+        return "\n".join(f"- {item.get('name', item.get('slug', '?'))}" for item in items)
+
+
+@mcp.tool()
+def search_beer(query: str) -> str:
+    """Search beerfyi.com for beer styles, hops, malts, and breweries.
+
+    Args:
+        query: Search query string.
+    """
+    from beerfyi.api import BeerFYI
+
+    with BeerFYI() as api:
+        data = api.search(query)
+        results = data.get("results", data) if isinstance(data, dict) else data
+        if not results:
+            return f"No results found for \"{query}\"."
+        items = results[:10] if isinstance(results, list) else []
+        return "\n".join(f"- {item.get('name', item.get('slug', '?'))}" for item in items)
+
+
+def main() -> None:
+    """Run the MCP server."""
+    mcp.run()
 
 
 if __name__ == "__main__":
-    mcp.run()
+    main()
