@@ -6,9 +6,7 @@
 
 Beer knowledge API client for Python. Search 112 beer styles, 82 hop varieties, 41 malts, 29 yeast strains, and brewing terminology from [BeerFYI](https://beerfyi.com) -- the complete beer style reference with 150 expert guides covering BJCP classifications, ingredient science, and brewing techniques.
 
-> **Explore beer at [beerfyi.com](https://beerfyi.com)** -- [Beer Styles](https://beerfyi.com/styles/) | [Hops](https://beerfyi.com/hops/) | [Malts](https://beerfyi.com/malts/) | [Yeast](https://beerfyi.com/yeast/) | [Brewing Guides](https://beerfyi.com/guides/)
-
-<p align="center">
+> **Explore beer at [beerfyi.com](https://beerfyi.com)** -- [Beer Styles](https://beerfyi.com/styles/) | [Hops](https://beerfyi.com/hops/) | [Malts](https://beerfyi.com/malts/) | [Yeast](https://beerfyi.com/yeasts/) | <p align="center">
   <img src="https://raw.githubusercontent.com/fyipedia/beerfyi/main/demo.gif" alt="beerfyi demo -- beer style API search and lookup" width="800">
 </p>
 
@@ -73,15 +71,13 @@ Beer styles are organized into broad families based on fermentation method, yeas
 | Belgian | Complex yeast character, phenols, esters | Dubbel, Tripel, Quadrupel, Saison, Witbier |
 | Wild/Spontaneous | Open-air inoculation, Brettanomyces | Lambic, Gueuze, American Wild Ale |
 
-Learn more: [Browse 112 Beer Styles](https://beerfyi.com/style/) · [Style Comparison Tool](https://beerfyi.com/compare/)
-
-### Hop Varieties
+Learn more: [Browse 112 Beer Styles](https://beerfyi.com/styles/) · ### Hop Varieties
 
 BeerFYI catalogs 82 hop varieties with detailed profiles including alpha acid percentage, aroma descriptors, typical usage (bittering, flavor, aroma, dry-hop), and recommended beer styles. Hops provide bitterness to balance malt sweetness, contribute floral, citrus, pine, or tropical aromas, and act as a natural preservative.
 
 Major hop-growing regions include the Pacific Northwest (Yakima Valley), Germany (Hallertau, Tettnang), England (Kent), Czech Republic (Saaz), and New Zealand (Nelson). Each region's terroir influences hop character -- Cascade from Yakima delivers different citrus notes than Cascade grown in other regions.
 
-Learn more: [Explore 82 Hop Varieties](https://beerfyi.com/hop/) · [Hop Search](https://beerfyi.com/search/)
+Learn more: [Explore 82 Hop Varieties](https://beerfyi.com/hops/) · [Hop Search](https://beerfyi.com/search/)
 
 ### Malts and Grains
 
@@ -89,7 +85,7 @@ The 41 malts in the database cover base malts (Pale, Pilsner, Munich, Vienna), s
 
 The malting process -- steeping, germination, and kilning -- transforms raw barley into brewing malt. Temperature and duration of kilning determine color and flavor: light kilning produces pale malt (2-4 SRM), moderate kilning creates Munich malt (8-10 SRM), and high-temperature roasting yields chocolate malt (350-450 SRM).
 
-Learn more: [Browse 41 Malts](https://beerfyi.com/malt/) · [Brewing Glossary](https://beerfyi.com/glossary/)
+Learn more: [Browse 41 Malts](https://beerfyi.com/malts/) · [Brewing Glossary](https://beerfyi.com/glossary/)
 
 ### Yeast Strains
 
@@ -97,7 +93,7 @@ BeerFYI tracks 29 yeast strains with fermentation temperature ranges, attenuatio
 
 Major yeast categories include clean ale strains (American, English), expressive Belgian strains (Abbey, Saison), clean lager strains (Bohemian, Bavarian), and wild cultures (Brettanomyces, Lactobacillus, Pediococcus).
 
-Learn more: [Yeast Strain Profiles](https://beerfyi.com/yeast/) · [Beer Guides](https://beerfyi.com/guide/)
+Learn more: [Yeast Strain Profiles](https://beerfyi.com/yeasts/) · [Beer Guides](https://beerfyi.com/guide/)
 
 ### Key Brewing Metrics
 
@@ -110,7 +106,7 @@ Learn more: [Yeast Strain Profiles](https://beerfyi.com/yeast/) · [Beer Guides]
 | Final Gravity | FG | Residual sugar after fermentation |
 | Attenuation | % | Percentage of sugar converted to alcohol |
 
-Learn more: [Beer Style Parameters](https://beerfyi.com/style/) · [Brewing Calculator](https://beerfyi.com/tools/)
+Learn more: [Beer Style Parameters](https://beerfyi.com/styles/) · [Brewing Calculator](https://beerfyi.com/tools/)
 
 ## API Endpoints
 
@@ -156,12 +152,12 @@ curl -s "https://beerfyi.com/api/v1/styles/new-england-ipa/"
   "og_min": 1.060,
   "og_max": 1.085,
   "recommended_hops": ["Citra", "Mosaic", "Galaxy", "El Dorado"],
-  "url": "https://beerfyi.com/styles/new-england-ipa/"
+  "url": ""
 }
 ```
 
 Full API documentation: [beerfyi.com/developers/](https://beerfyi.com/developers/).
-OpenAPI 3.1.0 spec: [beerfyi.com/api/v1/openapi.json](https://beerfyi.com/api/v1/openapi.json).
+OpenAPI 3.1.0 spec: .
 
 ## Command-Line Interface
 
@@ -227,13 +223,9 @@ with BeerFYI() as api:
 
 ## Learn More About Beer
 
-- **Reference**: [Beer Styles](https://beerfyi.com/styles/) | [Hops](https://beerfyi.com/hops/) | [Malts](https://beerfyi.com/malts/) | [Yeast](https://beerfyi.com/yeast/)
+- **Reference**: [Beer Styles](https://beerfyi.com/styles/) | [Hops](https://beerfyi.com/hops/) | [Malts](https://beerfyi.com/malts/) | [Yeast](https://beerfyi.com/yeasts/)
 - **Glossary**: [Brewing Terminology](https://beerfyi.com/glossary/)
-- **Guides**: [Brewing Guides](https://beerfyi.com/guides/)
-- **Compare**: [Style Comparisons](https://beerfyi.com/compare/)
-- **API**: [Developer Docs](https://beerfyi.com/developers/) | [OpenAPI Spec](https://beerfyi.com/api/v1/openapi.json)
-
-## Beverage FYI Family
+- **Guides**: - **Compare**: - **API**: [Developer Docs](https://beerfyi.com/developers/) | ## Beverage FYI Family
 
 Part of the [FYIPedia](https://fyipedia.com) open-source developer tools ecosystem -- world beverages from cocktails to sake.
 
