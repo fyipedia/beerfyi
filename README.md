@@ -239,6 +239,17 @@ Part of the [FYIPedia](https://fyipedia.com) open-source developer tools ecosyst
 | TeaFYI | [teafyi.com](https://teafyi.com) | 60 tea varieties, teaware, brewing guides |
 | NihonshuFYI | [nihonshufyi.com](https://nihonshufyi.com) | 80 sake, rice varieties, 50 breweries |
 
+## Embed Widget
+
+Embed [BeerFYI](https://beerfyi.com) widgets on any website with [beerfyi-embed](https://widget.beerfyi.com):
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/beerfyi-embed@1/dist/embed.min.js"></script>
+<div data-beerfyi="entity" data-slug="example"></div>
+```
+
+Zero dependencies · Shadow DOM · 4 themes (light/dark/sepia/auto) · [Widget docs](https://widget.beerfyi.com)
+
 ## License
 
 MIT
