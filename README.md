@@ -250,6 +250,15 @@ Embed [BeerFYI](https://beerfyi.com) widgets on any website with [beerfyi-embed]
 
 Zero dependencies · Shadow DOM · 4 themes (light/dark/sepia/auto) · [Widget docs](https://widget.beerfyi.com)
 
+## Recently Updated (v0.1.5)
+
+Latest content state on [https://beerfyi.com](https://beerfyi.com):
+- [Homepage](https://beerfyi.com)
+- [Developer documentation](https://beerfyi.com/developers/)
+- [Sitemap (full content index)](https://beerfyi.com/sitemap.xml)
+
+Version bumped 2026-05-27 as part of the FYIPedia [SEO recovery refresh](https://github.com/dobestan).
+
 ## License
 
 MIT
